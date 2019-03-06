@@ -12,4 +12,5 @@ spec:
       containers:
       - name: debug
         image: mansoor1/k8s-debug:latest
+        imagePullPolicy: Always
 
