@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-debug-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: k8s-debug
+    spec:
+      containers:
+      - name: debug
+        image: mansoor1/k8s-debug:latest
+
