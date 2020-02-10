@@ -6,20 +6,19 @@ RUN apk update && \
             tcpdump \
             busybox-extras \
             bash \
-            vim
+            vim \
+            git
 
 ########## Setup GO ############
-RUN apk add --no-cache git make musl-dev go
-
+ADD https://dl.google.com/go/go1.13.7.linux-amd64.tar.gz /usr/local/
 # Configure Go
-ENV GOROOT /usr/lib/go
+ENV GOROOT /usr/local/go
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
 
 RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
 
-# Install Glide
-RUN go get -u github.com/Masterminds/glide/...
+
 
 WORKDIR $GOPATH
 ############ End go setup #######
