@@ -10,15 +10,20 @@ RUN apk update && \
             git
 
 ########## Setup GO ############
-ADD https://dl.google.com/go/go1.13.7.linux-amd64.tar.gz /tmp/
-RUN tar xf /tmp/go1.13.7.linux-amd64.tar.gz && mv /tmp/go /usr/local/go
+
+RUN apk add .build-deps bash gcc musl-dev openssl
+RUN cd /tmp && \
+    wget -O go.tgz https://dl.google.com/go/go1.13.7.src.tar.gz && \
+    tar -C /usr/local -xzf go.tgz  && \
+    rm -f /tmp/go.tgz && \
+    cd /usr/local/go/src/ && \
+    ./make.bash
+
+
 # Configure Go
 ENV GOROOT /usr/local/go
-ENV GOPATH /go
-ENV PATH /go/bin:$PATH
-
-RUN mkdir -p ${GOPATH}/src ${GOPATH}/bin
-
+ENV GOPATH /opt/go
+ENV PATH /usr/local/go/bin:$GOPATH/bin:$PATH
 
 
 WORKDIR $GOPATH
