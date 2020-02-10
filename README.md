@@ -9,6 +9,9 @@ The tools installed:
  - tcpdump
  - curl
  - telnet
+ - git
+ - vim
+ - golang
 
 ## What is the use?
 
