@@ -10,7 +10,8 @@ RUN apk update && \
             git
 
 ########## Setup GO ############
-ADD https://dl.google.com/go/go1.13.7.linux-amd64.tar.gz /usr/local/
+ADD https://dl.google.com/go/go1.13.7.linux-amd64.tar.gz /tmp/
+RUN tar xf /tmp/go1.13.7.linux-amd64.tar.gz && mv /tmp/go /usr/local/go
 # Configure Go
 ENV GOROOT /usr/local/go
 ENV GOPATH /go
