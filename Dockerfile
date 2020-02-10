@@ -11,7 +11,7 @@ RUN apk update && \
 
 ########## Setup GO ############
 
-RUN apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl
+RUN apk add --no-cache --virtual .build-deps bash gcc musl-dev openssl go
 RUN cd /tmp && \
     wget -O go.tgz https://dl.google.com/go/go1.13.7.src.tar.gz && \
     tar -C /usr/local -xzf go.tgz  && \
