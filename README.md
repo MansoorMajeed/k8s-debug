@@ -11,6 +11,7 @@ The tools installed:
  - telnet
  - git
  - vim
+ - dig
  - golang
 
 ## What is the use?
