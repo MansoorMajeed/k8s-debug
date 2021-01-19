@@ -7,7 +7,8 @@ RUN apk update && \
             busybox-extras \
             bash \
             vim \
-            git
+            git \
+            bind-tools
 
 ########## Setup GO ############
 
