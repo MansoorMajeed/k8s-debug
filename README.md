@@ -21,7 +21,7 @@ For example, you want to verify connectivity from one Kubernetes cluster to an e
 
 Just run
 ```
-kubectl apply -f https://raw.githubusercontent.com/MansoorMajeed/k8s-debug/master/kubernetes/deployment.yml
+kubectl apply -f https://raw.githubusercontent.com/MansoorMajeed/k8s-debug/master/kubernetes/pod.yml
 kubectl exec -it k8s-debug-<pod id> bash
 ```
 
