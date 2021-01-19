@@ -1,16 +1,10 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
-  name: k8s-debug-deployment
+  name: k8s-debug
+  labels:
+    role: debug
 spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: k8s-debug
-    spec:
-      containers:
-      - name: debug
-        image: mansoor1/k8s-debug:latest
-        imagePullPolicy: Always
-
+  containers:
+    - name: debug
+      image: mansoor1/k8s-debug:latest
