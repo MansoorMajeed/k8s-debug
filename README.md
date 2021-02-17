@@ -24,7 +24,7 @@ Just run
 ```
 kubectl apply -f https://raw.githubusercontent.com/MansoorMajeed/k8s-debug/master/kubernetes/pod.yml
 kubectl get pod | grep k8s-debug
-kubectl exec -it k8s-debug-<pod id> bash
+kubectl exec -it k8s-debug -- bash
 ```
 
 ## Cleanup
